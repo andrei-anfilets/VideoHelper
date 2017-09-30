@@ -1,0 +1,83 @@
+﻿<Window xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" x:Class="FirstFloor.ModernUI.App.Windows.temp1"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"        
+    Title="Режим редактирования - для перехода в режим просмотра нажмите - F2, F4 - сохранить" Height="400" Width="605" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown_1">
+    <Grid KeyDown="Grid_KeyDown_1">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="193*"/>
+        </Grid.ColumnDefinitions>
+
+        <dxdo:DockLayoutManager Grid.ColumnSpan="2" Name="manager" Background="Transparent" dxdo:RestoreLayoutOptions.RemoveOldPanels="False">
+            <dxdo:LayoutGroup Background="Transparent" Name="layout_group1" Caption="LayoutRoot" dxb:MergingProperties.ElementMergingBehavior="Undefined">
+                <dxdo:LayoutGroup Background="Transparent" Orientation="Vertical" ItemWidth="0.42*">
+                    <dxdo:LayoutPanel Name="panel1" Caption="Панель1" dxb:MergingProperties.ElementMergingBehavior="Undefined">
+                    <Image Name="image1_panel1" />                        
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Name="panel2" Caption="Панель2">
+                        <Image Name="image1_panel2" />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Name="panel3" Caption="Панель3">
+                        <Image Name="image1_panel3" />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Name="panel4" Caption="Панель4">
+                        <Image Name="image1_panel4" />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Caption="Панель6" Name="panel6">
+                        <Image Name="image1_panel6" />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Caption="Панель7" Name="panel7">
+                        <Image Name="image1_panel7" />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Caption="Панель8" Name="panel8">
+                        <Image Name="image1_panel8" />
+                    </dxdo:LayoutPanel>
+                </dxdo:LayoutGroup>
+                <dxdo:LayoutPanel Name="panel5" Caption="Панель5" dxb:MergingProperties.ElementMergingBehavior="Undefined" ItemWidth="1.58*">
+                    <MediaElement  Name="media1" LoadedBehavior="Manual" MediaEnded="media1_MediaEnded">
+                        <MediaElement.ContextMenu>
+                            <ContextMenu>
+                                <ContextMenu.ItemsSource>
+                                    <CompositeCollection>
+                                        <MenuItem Header="Звук" Click="MenuItem_Click_3">
+                                            <MenuItem.Icon>
+                                                <Image Source="/Images/sound.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                       
+                                    </CompositeCollection>
+                                </ContextMenu.ItemsSource>
+                            </ContextMenu>
+                        </MediaElement.ContextMenu>
+                    </MediaElement>
+                </dxdo:LayoutPanel>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+    
+        <!--<mui:ModernProgressRing Name="progressBar1" IsActive="True" Width="80" Height="80"  Style="{StaticResource WanderingCubesProgressRingStyle}" />
+-->
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <ContextMenu.ItemsSource>
+                    <CompositeCollection>
+                        <MenuItem Header="Изображение" Click="MenuItem_Click_1">
+                            <MenuItem.Icon>
+                                <Image Source="/Images/photo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Видео" Click="MenuItem_Click_2" >
+                            <MenuItem.Icon>
+                                <Image Source="/Images/video.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </CompositeCollection>
+                </ContextMenu.ItemsSource>
+            </ContextMenu>
+        </Grid.ContextMenu>   
+        
+    </Grid>
+
+</Window>

@@ -1,0 +1,43 @@
+﻿<mui:ModernWindow x:Class="FirstFloor.ModernUI.App.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  xmlns:app="clr-namespace:FirstFloor.ModernUI.App"                  
+                  Title="Помощник" IsTitleVisible="True"
+                   LogoData="F1 M 21.5,18C 23.433,18 25,19.567 25,21.5C 25,23.433 23.433,25 21.5,25C 19.567,25 18,23.433 18,21.5C 18,19.567 19.567,18 21.5,18 Z M 46.9998,57.0001L 34.9999,57.0001C 29.4771,57.0001 24.9999,52.523 24.9999,47.0001L 24.9999,35.0001C 24.9999,29.4773 29.4771,25.0001 34.9999,25.0001L 46.9998,25.0001C 52.5227,25.0001 56.9998,29.4773 56.9998,35.0001L 56.9998,47.0001C 56.9998,52.523 52.5227,57.0001 46.9998,57.0001 Z M 46.5,39C 42.3578,39 39,42.3579 39,46.5C 39,50.6421 42.3579,54 46.5,54C 50.6421,54 54,50.6421 54,46.5C 54,42.3579 50.6421,39 46.5,39 Z M 33.5,29C 31.0147,29 29,31.0148 29,33.5C 29,35.9853 31.0147,38 33.5,38C 35.9853,38 38,35.9853 38,33.5C 38,31.0148 35.9853,29 33.5,29 Z "
+        
+    ContentSource="/Pages/Introduction.xaml"
+                  Width="800" Height="700" WindowStartupLocation="CenterScreen" Icon="pack://application:,,,/ModernUIDemo;component/Images/logo.png" Closing="ModernWindow_Closing_1">
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link DisplayName="Настройки" Source="/Pages/Settings.xaml" />
+        <mui:Link DisplayName="Помощь" Source="/Pages/UserGuide.xaml" />
+    </mui:ModernWindow.TitleLinks>
+
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Начало">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Старт" Source="/Pages/Introduction.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>       
+        <mui:LinkGroup DisplayName="Экраны">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Мониторы" Source="/Pages/ControlsStyles.xaml" />               
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Удаленное управление">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Подключиться" Source="/Pages/RemoteControl.xaml" />               
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Параметры" GroupKey="settings">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Настройки" Source="/Pages/Settings.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="О компании">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="О нас" Source="/Pages/AboutCompany.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

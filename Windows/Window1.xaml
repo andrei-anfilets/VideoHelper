@@ -1,0 +1,30 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" x:Class="FirstFloor.ModernUI.App.Windows.Window1"
+        Title="Window1" Height="300" Width="300">
+    <Grid>
+
+        <dxdo:DockLayoutManager Grid.ColumnSpan="3" Margin="0,-10,0,10" RenderTransformOrigin="0.427,0.501">
+            <dxdo:LayoutGroup>
+                <dxdo:LayoutGroup Orientation="Vertical">
+                    <dxdo:LayoutPanel  Caption="" ShowCaption="False" ShowCaptionImage="False">
+                        <Image Source="d:\Temp\video\3.jpg" Stretch="None"/>
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutGroup Orientation="Vertical">
+                        <dxdo:LayoutPanel Caption="" ShowCaption="False" ShowCaptionImage="False">
+                            <Image Source="d:\Temp\video\1.jpg" Stretch="None"/>
+                        </dxdo:LayoutPanel>
+                        <dxdo:LayoutPanel AllowDockToDocumentGroup="False" Caption="" HeaderBarContainerControlAllowDrop="False" ShowHideButton="False" ShowCollapseButton="False" ShowCaption="False" ShowCaptionImage="False" ShowExpandButton="False" ShowInDocumentSelector="False">
+                            <Image Source="d:\Temp\video\2.jpeg"/>
+                        </dxdo:LayoutPanel>
+                    </dxdo:LayoutGroup>
+                </dxdo:LayoutGroup>
+                <dxdo:LayoutPanel Caption="" ShowHideButton="False" ShowCollapseButton="False" ShowCaption="False" ShowCaptionImage="False" ShowExpandButton="False" ShowInDocumentSelector="False">
+                    <StackPanel Background="Black"/>
+                </dxdo:LayoutPanel>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+
+    </Grid>
+</Window>

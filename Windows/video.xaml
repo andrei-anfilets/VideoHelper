@@ -1,0 +1,111 @@
+﻿<Window x:Class="FirstFloor.ModernUI.App.Windows.video"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Режим редактирования - для перехода в режим просмотра нажмите - F2, F4 - сохранить" Background="Black" Height="300" Width="300" KeyDown="Window_KeyDown_1">
+    
+    
+    <Grid>
+        <MediaElement  Name="media1" LoadedBehavior="Manual" MediaEnded="media1_MediaEnded">
+            <MediaElement.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.ItemsSource>
+                        <CompositeCollection>
+                            <MenuItem Header="Видео" Click="MenuItem_Click_33">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/video.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </CompositeCollection>
+                    </ContextMenu.ItemsSource>
+                </ContextMenu>
+            </MediaElement.ContextMenu>
+        </MediaElement>
+        <Image Source="/Images/logo.png" Name="banner1" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <ContextMenu.ItemsSource>
+                        <CompositeCollection>
+                            <MenuItem Header="Увеличить" Click="MenuItem_Click_3">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/add.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Умеьшить" Click="MenuItem_Click_31">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/substr.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Выбрать изображение" Click="MenuItem_Click_35">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/photo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Влево/вправо" Click="MenuItem_Click_381">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/side.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Вверх/вниз" Click="MenuItem_Click_382">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/level.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Скрыть" Click="MenuItem_Click_38">
+                                <MenuItem.Icon>
+                                    <Image Source="/Images/close.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </CompositeCollection>
+                    </ContextMenu.ItemsSource>
+                </ContextMenu>
+            </Image.ContextMenu>
+        </Image>
+        <Canvas x:Name="Canvas" Background="Transparent" Height="25"
+                VerticalAlignment="Bottom">
+        <TextBlock Margin="0,7,0,0" VerticalAlignment="Bottom" Name="textBlock1" FontSize="15"  FontWeight="Bold" Background="#FF302D2D" Foreground="White"
+                       Text="------ТЕКСТ БЕГУЩЕЙ СТРОКИ (нажмите правой кнопкой мыши)-------" Canvas.Right="0">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" From="1300" To="-750" 
+                                                     Duration="0:0:15" RepeatBehavior="Forever"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </TextBlock.Triggers>
+                <TextBlock.ContextMenu>
+                    <ContextMenu>
+                        <ContextMenu.ItemsSource>
+                            <CompositeCollection>
+                                <MenuItem Header="Увеличить" Click="increaseTextBlock">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/add.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="Умеьшить" Click="decreaseTextBlock">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/substr.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="Текст" Click="setTextBlockText">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/photo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                
+                                <MenuItem Header="Скрыть" Click="hideTextBlock">
+                                    <MenuItem.Icon>
+                                        <Image Source="/Images/close.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </CompositeCollection>
+                        </ContextMenu.ItemsSource>
+                    </ContextMenu>
+                </TextBlock.ContextMenu>
+        </TextBlock>
+        </Canvas>
+    </Grid>
+</Window>

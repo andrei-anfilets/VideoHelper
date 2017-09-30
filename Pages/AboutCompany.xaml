@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FirstFloor.ModernUI.App.Pages.AboutCompany"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <StackPanel MinWidth="200" MaxWidth="300" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Text="О компании" Style="{StaticResource Heading2}" />
+                <mui:BBCodeBlock  BBCode="ГК Техиндустрия - рентгенотелевизионные системы досмотра BERG"/>
+                
+                <mui:BBCodeBlock  BBCode="124460, г.Москва, Зеленоград, ул.Конструктора Гуськова, дом 2, стр.5, Завод Квант
+                                 
+тел.    [b]+7 495 649-82-86
+        +7 495 229-44-54[/b]
+                                  
+                                  [url=http://aspect-bez.ru/][b]Сайт [/b][/url]
+" Margin="0,0,0,32"/>
+                
+                      </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
