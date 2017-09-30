@@ -51,7 +51,6 @@ namespace FirstFloor.ModernUI.App
             XmlSerializer xx = new XmlSerializer(typeof(UserStyle));
             FileStream myFileStream =
 new FileStream(MainWindow.specificFolder + "\\Style.xml", FileMode.Open);
-            //TextWriter writer = new StreamWriter("KPPDevices.xml", false);
             set = (UserStyle)xx.Deserialize(myFileStream);
             myFileStream.Close();
             return set;
