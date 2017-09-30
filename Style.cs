@@ -21,18 +21,18 @@ namespace FirstFloor.ModernUI.App
         {
 
         }
-        string src = "";
+        private string _src;
         public String themeSource
         {
-            get { return src; }
-            set { src = value; }
+            get { return _src; }
+            set { _src = value; }
         }
 
-        string theme = "";
+        private string _theme;
         public string themeColor
         {
-            get { return theme; }
-            set { theme = value; }
+            get { return _theme; }
+            set { _theme = value; }
         }      
 
 
