@@ -108,7 +108,9 @@ namespace FirstFloor.ModernUI.App.Pages
                     {
                         DisplayName = string.Format(CultureInfo.InvariantCulture, panelNameBox.Text,
                         ++groupId)
+
                     });
+                    remoteControlPanel.Visibility = Visibility.Visible;
                     RemoteControlEnabled = true;
 
                 }
@@ -129,6 +131,7 @@ namespace FirstFloor.ModernUI.App.Pages
                 if (Menu.LinkGroups.Count==1)
                 {
                     RemoteControlEnabled = false;
+                    remoteControlPanel.Visibility = Visibility.Collapsed;
                 }
             }, o => this.Menu.SelectedLinkGroup != null);
 

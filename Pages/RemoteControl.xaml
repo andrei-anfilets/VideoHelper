@@ -41,7 +41,7 @@
                 <Button x:Name="AddGroup" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,0,0,0" Click="Button_Click_1">Добавить</Button>
                 <Button x:Name="RemoveGroup" Content="Отключить" Margin="8,0,0,0" Click="RemoveGroup_Click" />
             </StackPanel>
-            <StackPanel>
+            <StackPanel x:Name="remoteControlPanel" Visibility="Collapsed">
                 <Separator Style="{StaticResource ContentRoot}" Margin="16,0,16,5" Background="#FF12B4FF"/>
                 <CheckBox Name="startQueueButton" IsChecked="{Binding currState.QUEQENABLED}" Checked="startQueueButtonClick" Unchecked="stopQueueButtonClick" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Content="Согласно порядку отображения" FontSize="22">
                     <CheckBox.LayoutTransform>
