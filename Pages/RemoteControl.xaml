@@ -11,13 +11,13 @@
         <StackPanel HorizontalAlignment="Left">
             <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalScrollBarVisibility="Disabled" Width="500" HorizontalAlignment="Center">
                 <mui:ModernMenu x:Name="Menu" SelectedSource="/link1" Margin="0,0,0,16">
-                    <mui:ModernMenu.LinkGroups>                        
-                        <mui:LinkGroup DisplayName="Инфо">
+                    <!--  <mui:ModernMenu.LinkGroups>                        
+                      <mui:LinkGroup DisplayName="Инфо">
                             <mui:LinkGroup.Links>
                                 <mui:Link DisplayName="Порядок подключения" Source="/link1" />
                             </mui:LinkGroup.Links>
                         </mui:LinkGroup>
-                    </mui:ModernMenu.LinkGroups>
+                    </mui:ModernMenu.LinkGroups>-->
                 </mui:ModernMenu>
             </ScrollViewer>
             <!-- displaying the current state of the menu -->

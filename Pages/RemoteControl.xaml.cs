@@ -122,7 +122,7 @@ namespace FirstFloor.ModernUI.App.Pages
 
             // add link to selected group command
 
-            this.Menu.SelectedLink.PropertyChanged += SelectedGroup_PropertyChanged;
+            //this.Menu.SelectedLink.PropertyChanged += SelectedGroup_PropertyChanged;
             
 
             // remove selected group command
