@@ -210,16 +210,20 @@ namespace FirstFloor.ModernUI.App
                 
                 try
                 {
-                    sender.Connect(remoteEP);
-                    String exec = task.ToString() + "|" + param1 + "|" + param2 + "|<EOF>";
 
+
+                    var totalRecieved = 0;
+                    sender.Connect(remoteEP);
+                    //sender.ConnectAsync(new SocketAsyncEventArgs() {RemoteEndPoint = remoteEP});// (remoteEP);
+                    String exec = task.ToString() + "|" + param1 + "|" + param2 + "|<EOF>";
+                    
                     UTF8Encoding enc2 = new UTF8Encoding();
                     byte[] msg = enc2.GetBytes(exec);
                     SocketAsyncEventArgs se = new SocketAsyncEventArgs();
                     se.SetBuffer(msg, 0, msg.Length);
-                     sender.SendAsync(se);
-                    int bytesRec = sender.Receive(bytes);
-
+                    sender.SendAsync(se);
+                    int bytesRec =sender.Receive(bytes);
+                    
 
                     UTF8Encoding enc = new UTF8Encoding();
 
@@ -235,6 +239,7 @@ namespace FirstFloor.ModernUI.App
 
                     sender.Shutdown(SocketShutdown.Both);
                     sender.Close();
+                    logger.Log(DateTime.Now + " отправлено " + exec + " result: " + rez);
                     return rez;
                 }
                 catch (ArgumentNullException ane)

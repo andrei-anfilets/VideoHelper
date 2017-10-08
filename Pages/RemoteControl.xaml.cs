@@ -49,6 +49,7 @@ namespace FirstFloor.ModernUI.App.Pages
         bool msgS = false;
 
         public ObservableCollection<dev> kppDevList;
+        
         public ObservableCollection<KPPDeny.deny> kppDenyList;
         public ObservableCollection<KPPMessages.msg> kppMsgList;
         private readonly BackgroundWorker worker = new BackgroundWorker();
@@ -71,7 +72,7 @@ namespace FirstFloor.ModernUI.App.Pages
         Dictionary<string, panelState> panel_states = new Dictionary<string, panelState>();
 
         public static bool RemoteControlEnabled = false;
-
+        public static DpiAwareness Instance;
 
         public DpiAwareness()
         {
@@ -155,6 +156,15 @@ namespace FirstFloor.ModernUI.App.Pages
             DGmsg.Visibility = Visibility.Collapsed;
 
             QueueShowPanel.Visibility = Visibility.Collapsed;
+
+
+            DGdev.DataContextChanged += DGdev_DataContextChanged;
+            Instance = this;
+        }
+
+        private void DGdev_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+      
         }
 
         private void SelectedGroup_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -795,7 +805,7 @@ namespace FirstFloor.ModernUI.App.Pages
 
 
         //отправляет список отображаемых средств досмотра
-        private void sendKppDevQueue()
+        public void sendKppDevQueue()
         {
             if (DGdev.DataContext==null)
             {
@@ -875,7 +885,7 @@ namespace FirstFloor.ModernUI.App.Pages
         }
         
         //отправка списка запрещенных предметов
-        private void sendDenyList()
+        public void sendDenyList()
         {
             if (DGdeny.DataContext==null)
             {
@@ -1137,8 +1147,7 @@ namespace FirstFloor.ModernUI.App.Pages
             {
                 currState = new panelState();
                 RestorePanleState(currState);
-            }
-            
+            }          
 
 
             PanelIPToSave = selectedIP;
@@ -1149,12 +1158,12 @@ namespace FirstFloor.ModernUI.App.Pages
 
         private void DataGrid_SelectedCellsChanged(object sender, RoutedEventArgs e)
         {
-            sendKppDevQueue();
+           // sendKppDevQueue();
         }
 
         private void DataGrid_SelectedCellsChanged_1(object sender, SelectedCellsChangedEventArgs e)
         {
-            sendDenyList();
+           // sendDenyList();
         }
 
         private void DataGrid_CurrentCellChanged(object sender, EventArgs e)

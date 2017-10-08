@@ -190,7 +190,16 @@ new FileStream(MainWindow.specificFolder + "\\KPPDevices.xml", FileMode.Open);
         public int ID { get; set; }
         public string name { get; set; }
         public string path { get; set; }
-        public bool showing { get; set; }
+        private bool _showing = false;
+        public bool showing { get {
+                return _showing;
+            } set {
+                _showing = value;
+                if (FirstFloor.ModernUI.App.Pages.DpiAwareness.RemoteControlEnabled)
+                {
+                    FirstFloor.ModernUI.App.Pages.DpiAwareness.Instance.sendKppDevQueue();
+                }
+            } }
     }
 
     public class kppDevices : ICollection
