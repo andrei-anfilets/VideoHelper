@@ -1017,6 +1017,7 @@ namespace FirstFloor.ModernUI.App.Pages
         private void ReadCurrState()
         {
             Send = false;
+            currState.IP_ADDRESS = ipAdr;
             currState.QUEQENABLED = startQueueButton.IsChecked.Value;
             List<item> items = new List<item>();
             foreach (var i in orderControl.lbTwo.Items)
@@ -1062,7 +1063,11 @@ namespace FirstFloor.ModernUI.App.Pages
             FirstFloor.ModernUI.App.Content.newTabEmp.PlayList.Items.Clear();
             FirstFloor.ModernUI.App.Content.newTabEmp.queueList.Clear();
             orderControl.lbTwo.ItemsSource = null;
-
+            if (stateToRestore.IP_ADDRESS!=null)
+            {
+                ipAddr.Text = stateToRestore.IP_ADDRESS;
+            }
+          
 
 
             orderControl.lbTwo.ItemsSource = stateToRestore.QUEUEitems;
